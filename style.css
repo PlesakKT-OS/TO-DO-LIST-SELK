@@ -30,6 +30,9 @@
 html {
   font-size: 62.5%;
 }
+body {
+  height: 100%;
+}
 
 .header {
   background-color: var(--primary);
@@ -121,7 +124,7 @@ html {
 }
 .grid__2-rows-centered {
   display: grid;
-  grid-template-rows: 2.5rem 62vh;
+  grid-template-rows: 10vh 60vh;
   justify-items: center;
 }
 .tasks {
@@ -386,5 +389,3 @@ button {
   box-shadow: var(--shadow);
   margin-bottom: 1rem;
 }
-
-/*Media Queris*/
