@@ -1,0 +1,285 @@
+/* BELOW 1440px*/
+@media (max-width: 90em) {
+  .tasks {
+    width: 33rem;
+  }
+  .popup {
+    height: 65rem;
+  }
+  .grid__2-rows-centered {
+    grid-template-rows: 2.2rem 60vh;
+  }
+}
+/* BELOW 1344px*/
+@media (max-width: 84em) {
+  .tasks {
+    width: 33rem;
+  }
+  .btn-add-and-sort__container {
+    padding: 2rem 2rem 1rem 2rem;
+  }
+  .to-do-list__container {
+    padding: 0;
+  }
+  .header {
+    font-size: 2rem;
+  }
+  .grid__2-rows-centered {
+    grid-template-rows: 2.2rem 57vh;
+  }
+}
+/*BELOW 1200px*/
+@media (max-width: 75em) {
+  .tasks {
+    width: 25rem;
+    font-size: 1.3rem;
+  }
+  .btn-add-and-sort__container {
+    padding: 2rem 2rem 1rem 2rem;
+  }
+  .to-do-list__container {
+    padding: 0;
+  }
+  .btn-popup,
+  .sort-options,
+  .sort {
+    font-size: 1.5rem;
+  }
+  .task-status {
+    font-size: 1.8rem;
+  }
+  .grid__2-rows-centered {
+    grid-template-rows: 2.2rem 55vh;
+  }
+  .popup {
+    width: 32rem;
+    height: 62rem;
+  }
+  .popup h3 {
+    font-size: 1.7rem;
+  }
+  .popup h4 {
+    font-size: 1rem;
+  }
+  .popup .create-todo input[type="text"] {
+    font-size: 1.7rem;
+  }
+  .popup .bubble {
+    width: 15px;
+    height: 15px;
+  }
+  .popup .create-todo .rating-options label div {
+    font-size: 1.2rem;
+  }
+  .btn {
+    font-size: 1.5rem;
+  }
+  .popup .create-todo input[type="date"] {
+    font-size: 1.7rem;
+  }
+  .header {
+    font-size: 1.6rem;
+  }
+  .footer {
+    font-size: 1.2rem;
+  }
+}
+/* BELOW 944px*/
+@media (max-width: 59em) {
+  .to-do-list__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tasks {
+    width: 28em;
+    font-size: 1.3rem;
+  }
+  .btn-add-and-sort__container {
+    padding: 1rem 1rem 0rem 1rem;
+  }
+
+  .btn-popup,
+  .sort-options,
+  .sort {
+    font-size: 1.2rem;
+  }
+  .task-status {
+    font-size: 1.8rem;
+  }
+  .grid__2-rows-centered {
+    grid-template-rows: 2.2rem 65vh;
+  }
+  .popup {
+    width: 32rem;
+    height: 50rem;
+  }
+  .popup h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .popup h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .popup .create-todo input[type="text"] {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .popup .bubble {
+    width: 10px;
+    height: 10px;
+  }
+  .popup .create-todo .rating-options label div {
+    font-size: 1rem;
+  }
+  .btn {
+    font-size: 1.2rem;
+  }
+  .popup .create-todo input[type="date"] {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .header {
+    font-size: 1.6rem;
+  }
+  .footer {
+    font-size: 1.2rem;
+  }
+  .to-do-list__container {
+    margin: 1rem 0 1rem 0;
+  }
+}
+/* BELOW 704px*/
+@media (max-width: 44em) {
+  .to-do-list__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .tasks {
+    width: 24em;
+    font-size: 1rem;
+  }
+  .btn-add-and-sort__container {
+    padding: 1rem 1rem 0rem 1rem;
+  }
+
+  .btn-popup,
+  .sort-options,
+  .sort {
+    font-size: 1rem;
+  }
+  .task-status {
+    font-size: 1.2rem;
+  }
+  .grid__2-rows-centered {
+    grid-template-rows: 2rem 65vh;
+  }
+  .popup {
+    width: 32rem;
+    height: 40rem;
+  }
+  .popup h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .popup h4 {
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+  .popup .create-todo input[type="text"] {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .popup .bubble {
+    width: 8px;
+    height: 8px;
+  }
+  .popup .create-todo .rating-options label div {
+    font-size: 1rem;
+  }
+  .btn {
+    font-size: 1rem;
+  }
+  .popup .create-todo input[type="date"] {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .header {
+    font-size: 1.2rem;
+  }
+  .footer {
+    font-size: 0.8rem;
+  }
+}
+/* BELOW 544px*/
+@media (max-width: 34em) {
+  .to-do-list__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .tasks {
+    width: 24em;
+    font-size: 0.8rem;
+  }
+  .btn-add-and-sort__container {
+    padding: 0.5rem 0.5rem 0rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-popup {
+    margin-bottom: 0.5rem;
+  }
+
+  .btn-popup,
+  .sort-options,
+  .sort {
+    font-size: 0.7rem;
+    margin-left: 0;
+  }
+  .grid__2-rows-centered {
+    grid-template-rows: 2rem 50vh;
+  }
+  .popup {
+    width: 25rem;
+    height: 25rem;
+  }
+  .popup h3 {
+    font-size: 0.5rem;
+    margin-bottom: 0.1rem;
+  }
+  .popup h4 {
+    font-size: 0.3rem;
+    margin-bottom: 0.1rem;
+  }
+  .popup .create-todo input[type="text"] {
+    font-size: 0.5rem;
+    margin-bottom: 0.1rem;
+    padding: 0.5rem 1rem;
+  }
+  .popup .bubble {
+    width: 4px;
+    height: 4px;
+  }
+  .popup .create-todo .rating-options label div {
+    font-size: 0.5rem;
+  }
+  .btn {
+    font-size: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+  .popup .create-todo input[type="date"] {
+    font-size: 0.5rem;
+    margin-bottom: 0.1rem;
+    padding: 0.5rem 1rem;
+  }
+  .popup .create-todo .rating-options label {
+    padding: 0.5rem 1rem;
+  }
+  .header {
+    font-size: 1rem;
+  }
+  .footer {
+    font-size: 0.5rem;
+  }
+}

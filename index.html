@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO-DO LISTA</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <header class="header">TO-DO LISTA</header>
+    <div class="application__container">
+      <div class="btn-add-and-sort__container">
+        <button class="btn-popup" id="btn-popup" type="button">
+          DODAJ ZADATAK
+        </button>
+        <div class="sort">
+          <form>
+            <label for="sorts">ODABERITE NAČIN SORTIRANJA:</label>
+            <select class="sort-options" id="sorts" name="sorts" onchange="ChangeSort(value);">
+              <option value="1">NAJNOVIJI PRVO</option>
+              <option value="2">NAJSTARIJI PRVO</option>
+              <option value="3">RATING SILAZNO</option>
+              <option value="4">RATING UZLAZNO</option>
+            </select>      
+          </form>
+        
+        </div>
+      </div>
+        <div class="popup" id="popup">
+          <section class="create-todo">
+            <h3>IZRADI NOVI ZADATAK</h3>
+            <form id="new-todo-form">
+              <div class="formBox">
+                <h4>Unesite ime zadatka</h4>
+                <input type="text" id="taskName" placeholder="npr. Zadatak 1" />
+              </div>
+              <div class="formBox">
+                <h4>Unesite kranji rok</h4>
+                <input type="date" id="taskDueDate" />
+              </div>
+              <div class="formBox">
+                <h4>Odaberite rating</h4>
+                <div class="rating-options">
+                  <label>
+                    <input
+                      type="radio"
+                      id="taskRating1"
+                      value="1"
+                      name="rating"
+                    />
+                    <span class="bubble rating1"></span>
+                    <div>1</div>
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      id="taskRating2"
+                      value="2"
+                      name="rating"
+                    />
+                    <span class="bubble rating2"></span>
+                    <div>2</div>
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      id="taskRating3"
+                      value="3"
+                      name="rating"
+                    />
+                    <span class="bubble rating3"></span>
+                    <div>3</div>
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      id="taskRating4"
+                      value="4"
+                      name="rating"
+                    />
+                    <span class="bubble rating4"></span>
+                    <div>4</div>
+                  </label>
+
+                  <label>
+                    <input
+                      type="radio"
+                      id="taskRating5"
+                      value="5"
+                      name="rating"
+                    />
+                    <span class="bubble rating5"></span>
+                    <div>5</div>
+                  </label>
+                </div>
+              </div>
+              <div class="formBox">
+                <h4 for="taskCreatorName">Unesite svoje ime i prezime</h4>
+                <input
+                  type="text"
+                  id="taskCreatorName"
+                  placeholder="npr. Ivo Ivić"
+                />
+              </div>
+              <div class="formBox">
+                <h4 for="taskDescription">Unesite opis zadatka</h4>
+                <input
+                  type="text"
+                  id="taskDescription"
+                  placeholder="npr. Opis zadatka 1"
+                />
+              </div>
+              <div class="formBox">
+                <button
+                  id="btn-addTask"
+                  class="btn"
+                  type="submit"
+                >
+                  DODAJ ZADATAK
+                </button>
+              </div>
+            </form>
+            <button class="btn btn-cancel" id="btn-close"
+              >ODUSTANI</
+            >
+          </section>
+        </div>
+
+        <div class="popup" id="popup-edit">
+          
+
+          <section class="create-todo">
+            <h3>UREDI ZADATAK</h3>
+            <form id="edit-todo-form">
+              <div class="formBox">
+                <h4>Unesite ime zadatka</h4>
+                <input type="text" id="taskNameEdit" placeholder="npr. Zadatak 1" />
+              </div>
+              <div class="formBox">
+                <h4>Unesite kranji rok</h4>
+                <input type="date" id="taskDueDateEdit" />
+              </div>
+              <div class="formBox">
+                <h4>Odaberite rating</h4>
+                <div class="rating-options">
+                  <label>
+                    <input
+                      type="radio"
+                      id="taskRating1Edit"
+                      value="1"
+                      name="rating"
+                    />
+                    <span class="bubble rating1"></span>
+                    <div>1</div>
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      id="taskRating2Edit"
+                      value="2"
+                      name="rating"
+                    />
+                    <span class="bubble rating2"></span>
+                    <div>2</div>
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      id="taskRating3Edit"
+                      value="3"
+                      name="rating"
+                    />
+                    <span class="bubble rating3"></span>
+                    <div>3</div>
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      id="taskRating4Edit"
+                      value="4"
+                      name="rating"
+                    />
+                    <span class="bubble rating4"></span>
+                    <div>4</div>
+                  </label>
+
+                  <label>
+                    <input
+                      type="radio"
+                      id="taskRating5Edit"
+                      value="5"
+                      name="rating"
+                    />
+                    <span class="bubble rating5"></span>
+                    <div>5</div>
+                  </label>
+                </div>
+              </div>
+              <div class="formBox">
+                <h4 for="taskCreatorNameEdit">Unesite svoje ime i prezime</h4>
+                <input
+                  type="text"
+                  id="taskCreatorNameEdit"
+                  placeholder="npr. Ivo Ivić"
+                />
+              </div>
+              <div class="formBox">
+                <h4 for="taskDescriptionEdit">Unesite opis zadatka</h4>
+                <input
+                  type="text"
+                  id="taskDescriptionEdit"
+                  placeholder="npr. Opis zadatka 1"
+                />
+              </div>
+              <div class="formBox">
+                <button class="btn btn-edit-openTasks" id="btn-edit-openTasks" type="submit">UREDI ZADATAK</button>
+         
+              </div>
+            </form>
+            <button class="btn btn-close-dit" id="btn-close-edit">ODUSTANI</button>
+          </section>
+
+          
+        </div>
+      
+        <div class="to-do-list__container">
+          <div class="open-tasks__container grid__2-rows-centered">
+            <h2 class="task-status">OPEN</h2>
+            <div class="open-tasks tasks"></div>
+          </div>
+          <div class="in-progress-tasks__container grid__2-rows-centered">
+            <h2 class="task-status">IN PROGRESS</h2>
+            <div class="in-progress-tasks tasks"></div>
+          </div>
+          <div class="closed-tasks__container grid__2-rows-centered">
+            <h2 class="task-status">CLOSED</h2>
+            <div class="closed-tasks tasks"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p id="date-and-app-version"></p>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>
