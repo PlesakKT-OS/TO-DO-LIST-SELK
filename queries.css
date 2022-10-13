@@ -1,3 +1,15 @@
+/* BELOW 1700px*/
+@media (max-width: 106em) {
+  .tasks {
+    width: 33rem;
+  }
+  .popup {
+    height: 65rem;
+  }
+  .grid__2-rows-centered {
+    grid-template-rows: 2.2rem 62vh;
+  }
+}
 /* BELOW 1440px*/
 @media (max-width: 90em) {
   .tasks {
@@ -27,9 +39,44 @@
   .grid__2-rows-centered {
     grid-template-rows: 2.2rem 57vh;
   }
+  .popup {
+    width: 35rem;
+    height: 55rem;
+  }
+  .popup h3 {
+    font-size: 1.4rem;
+  }
+  .popup h4 {
+    font-size: 1rem;
+  }
+  .popup .create-todo input[type="text"] {
+    font-size: 1.4rem;
+  }
+  .popup .bubble {
+    width: 15px;
+    height: 15px;
+  }
+  .popup .create-todo .rating-options label div {
+    font-size: 1.2rem;
+  }
+  .btn {
+    font-size: 1.4rem;
+  }
+  .popup .create-todo input[type="date"] {
+    font-size: 1.4rem;
+  }
+  .popup input:checked ~ .bubble::after {
+    width: 6px;
+    height: 6px;
+    opacity: 1;
+  }
 }
 /*BELOW 1200px*/
 @media (max-width: 75em) {
+  .to-do-list__container {
+    display: flex;
+    flex-direction: column;
+  }
   .tasks {
     width: 25rem;
     font-size: 1.3rem;
