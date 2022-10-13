@@ -252,12 +252,11 @@
   }
   .popup {
     width: 25rem;
-    height: 25rem;
+    height: 28rem;
   }
   .popup h3 {
     font-size: 0.8rem;
     margin-bottom: 0.1rem;
-    margin-top: 0.2rem;
   }
   .popup h4 {
     font-size: 0.7rem;
