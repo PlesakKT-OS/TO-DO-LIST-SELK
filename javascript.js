@@ -21,22 +21,34 @@ document.addEventListener("DOMContentLoaded", () => {
 const AddUserInputToOpenTasks = (ev) => {
   ev.preventDefault();
   let taskRating = $("input[name='rating']:checked").val();
-  let openTask = {
-    date: new Date(),
-    taskName: document.getElementById("taskName").value,
-    taskDueDate: document.getElementById("taskDueDate").value,
-    taskCreatorName: document.getElementById("taskCreatorName").value,
-    taskDescription: document.getElementById("taskDescription").value,
-    rating: taskRating,
-    status: "OPEN",
-    id: counterOfTasks,
-  };
-  document.getElementById("new-todo-form").reset();
-  openTasks.push(openTask);
+  if (document.getElementById("taskName").value === "") {
+    alert("Unesite ime zadatka");
+  } else if (document.getElementById("taskDueDate").value === "") {
+    alert("Unesite krajni rok zadatka");
+  } else if (taskRating === undefined) {
+    alert("Odaberite rating zadatka");
+  } else if (document.getElementById("taskCreatorName").value === "") {
+    alert("Unesite svoje ime i prezime");
+  } else if (document.getElementById("taskDescription").value === "") {
+    alert("Unesite opis zadatka");
+  } else {
+    let openTask = {
+      date: new Date(),
+      taskName: document.getElementById("taskName").value,
+      taskDueDate: document.getElementById("taskDueDate").value,
+      taskCreatorName: document.getElementById("taskCreatorName").value,
+      taskDescription: document.getElementById("taskDescription").value,
+      rating: taskRating,
+      status: "OPEN",
+      id: counterOfTasks,
+    };
+    document.getElementById("new-todo-form").reset();
+    openTasks.push(openTask);
 
-  ClosePopup();
-  counterOfTasks++;
-  UpdateContainers();
+    ClosePopup();
+    counterOfTasks++;
+    UpdateContainers();
+  }
 };
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btn-close").addEventListener("click", ClosePopup);
@@ -54,21 +66,33 @@ document.addEventListener("DOMContentLoaded", () => {
 const EditOpenTasks = (ev) => {
   ev.preventDefault();
   let taskRatingEdit = $("input[name='rating']:checked").val();
-  console.log(taskRatingEdit);
-  let EditedTask = {
-    date: new Date(),
-    taskName: document.getElementById("taskNameEdit").value,
-    taskDueDate: document.getElementById("taskDueDateEdit").value,
-    taskCreatorName: document.getElementById("taskCreatorNameEdit").value,
-    taskDescription: document.getElementById("taskDescriptionEdit").value,
-    rating: taskRatingEdit,
-    status: "OPEN",
-    id: currentEditId,
-  };
-  openTasks = openTasks.filter((data) => data.id != currentEditId);
-  openTasks.push(EditedTask);
-  ClosePopupEdit();
-  UpdateContainers();
+
+  if (document.getElementById("taskNameEdit").value === "") {
+    alert("Unesite ime zadatka");
+  } else if (document.getElementById("taskDueDateEdit").value === "") {
+    alert("Unesite krajni rok zadatka");
+  } else if (taskRatingEdit === undefined) {
+    alert("Odaberite rating zadatka");
+  } else if (document.getElementById("taskCreatorNameEdit").value === "") {
+    alert("Unesite svoje ime i prezime");
+  } else if (document.getElementById("taskDescriptionEdit").value === "") {
+    alert("Unesite opis zadatka");
+  } else {
+    let EditedTask = {
+      date: new Date(),
+      taskName: document.getElementById("taskNameEdit").value,
+      taskDueDate: document.getElementById("taskDueDateEdit").value,
+      taskCreatorName: document.getElementById("taskCreatorNameEdit").value,
+      taskDescription: document.getElementById("taskDescriptionEdit").value,
+      rating: taskRatingEdit,
+      status: "OPEN",
+      id: currentEditId,
+    };
+    openTasks = openTasks.filter((data) => data.id != currentEditId);
+    openTasks.push(EditedTask);
+    ClosePopupEdit();
+    UpdateContainers();
+  }
 };
 $(".open-tasks").on(
   "click",
@@ -90,8 +114,8 @@ $(".open-tasks").on(
   }
 );
 $(".open-tasks").on("click", ".btn-edit", function EditTask() {
-  OpenPopupEdit();
   currentEditId = this.id;
+  OpenPopupEdit();
 });
 $(".in-progress-tasks").on(
   "click",
@@ -412,6 +436,26 @@ function ClosePopup() {
 }
 function OpenPopupEdit() {
   popupEdit.classList.add("open-popup");
+  let taskNameEdit = document.getElementById("taskNameEdit");
+  let taskDueDate = document.getElementById("taskDueDateEdit");
+  let taskCreatorName = document.getElementById("taskCreatorNameEdit");
+  let taskDescription = document.getElementById("taskDescriptionEdit");
+  let taskRating = openTasks[currentEditId].rating;
+  let taskRating1 = document.getElementById("taskRating1Edit");
+  let taskRating2 = document.getElementById("taskRating2Edit");
+  let taskRating3 = document.getElementById("taskRating3Edit");
+  let taskRating4 = document.getElementById("taskRating4Edit");
+  let taskRating5 = document.getElementById("taskRating5Edit");
+
+  if (taskRating.toString() === "1") taskRating1.checked = true;
+  else if (taskRating.toString() === "2") taskRating2.checked = true;
+  else if (taskRating.toString() === "3") taskRating3.checked = true;
+  else if (taskRating.toString() === "4") taskRating4.checked = true;
+  else taskRating5.checked = true;
+  taskNameEdit.value = openTasks[currentEditId].taskName;
+  taskDueDate.value = openTasks[currentEditId].taskDueDate;
+  taskCreatorName.value = openTasks[currentEditId].taskCreatorName;
+  taskDescription.value = openTasks[currentEditId].taskDescription;
 }
 function ClosePopupEdit() {
   popupEdit.classList.remove("open-popup");
